@@ -19,7 +19,7 @@ body {
 }
 
 .sun-container {
-	/* Relative captures the absolute position of the rays */
+	/* absolute captures the absolute position of the rays */
 	position: absolute;
 	height: 200px;
 	width: 200px;
@@ -28,6 +28,24 @@ body {
 	align-items: center;
 }
 
+.container .sun-rotation-container {
+	height: 200px;
+	width: 200px;
+	/* Exaggerated over rotation on the back end of the rotation */
+	animation: rotateSun cubic-bezier(.86,.33,.01,1.42) 10s infinite
+}
+
+@keyframes rotateSun {
+
+	0%,
+	55%,100% {
+		transform: rotate(0deg)
+	}
+
+	85% {
+		transform: rotate(360deg)
+	}
+}
 
 .sun-container.one {
 	animation: animateRayOne ease-in-out 2s infinite;
@@ -297,10 +315,15 @@ body {
 
 
 /* Shadow */
-.container .sun-container.one::before {
+.sun-shadow {
+	position: absolute;
+	width: 150px;
+}
+
+.container .sun-shadow::before {
 	content: '';
 	position: absolute;
-	bottom: -150px;
+	bottom: -185px;
 	left: -50%;
 	width: 200%;
 	height: 40px;
