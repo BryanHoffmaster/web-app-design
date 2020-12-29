@@ -32,104 +32,140 @@ body {
 .sun-container.one {
 	animation: animateRayOne ease-in-out 2s infinite;
 }
+
 @keyframes animateRayOne {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(-2deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(2deg);
 	}
 }
 
-.sun-container.two{
+.sun-container.two {
 	transform: rotate(45deg);
 	animation: animateRayTwo ease-in-out 2s infinite;
 }
+
 @keyframes animateRayTwo {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(43deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(45deg);
 	}
 }
 
-.sun-container.three{
+.sun-container.three {
 	transform: rotate(90deg);
 	animation-delay: -1s;
 	animation: animateRayThree ease-in-out 1s infinite;
 }
+
 @keyframes animateRayThree {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(88deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(90deg);
 	}
 }
 
-.sun-container.four{
+.sun-container.four {
 	transform: rotate(135deg);
-	animation: animateRayFour ease-in-out 4s infinite;
+	animation: animateRayFour ease-in-out 3.5s infinite;
 }
+
 @keyframes animateRayFour {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(133deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(135deg);
 	}
 }
 
-.sun-container.five{
+.sun-container.five {
 	transform: rotate(180deg);
 	animation: animateRayFive ease-in-out 2s infinite;
 }
+
 @keyframes animateRayFive {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(178deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(180deg);
 	}
 }
 
-.sun-container.six{
+.sun-container.six {
 	transform: rotate(225deg);
 	animation: animateRaySix ease-in-out 3s infinite;
 }
+
 @keyframes animateRaySix {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(223deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(225deg);
 	}
 }
 
-.sun-container.seven{
+.sun-container.seven {
 	transform: rotate(270deg);
 	animation-delay: -1s;
 	animation: animateRaySeven ease-in-out 2s infinite;
 }
+
 @keyframes animateRaySeven {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(268deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(270deg);
 	}
 }
 
-.sun-container.eight{
+.sun-container.eight {
 	transform: rotate(315deg);
 	animation: animateRayEight ease-in-out 4s infinite;
 }
+
+.sun-container.eight:hover {
+	transform: rotateY(180deg);
+}
+
 @keyframes animateRayEight {
-	0%,100%{
+
+	0%,
+	100% {
 		transform: rotate(313deg);
 	}
-	50%{
+
+	50% {
 		transform: rotate(315deg);
 	}
 }
@@ -156,18 +192,81 @@ body {
 	background: #eafdff;
 }
 
-.sun-ray{
+/* creates the long ray streak, associated with eay sun ray */
+.sun-ray::after {
+	content: "";
+	left: 30px;
+	top: -50px;
+	width: 1px;
+	height: 95px;
+	position: absolute;
+	background-color: rgba(0, 0, 0, .85);
+
+	transform: rotate(20deg) scaleY(0);
+	transform-origin: top;
+	transition: transform 150ms ease-in;
+	animation: rayStreak linear 4s infinite;
+	z-index: -1;
+}
+
+.sun-ray.one::after {
+	animation-delay: 5s;
+}
+
+.sun-ray.two::after {
+	animation-delay: 1s;
+}
+
+.sun-ray.three::after {
+	animation-delay: 3s;
+}
+
+.sun-ray.four::after {
+	animation-delay: 6s;
+}
+
+.sun-ray.five::after {
+	animation-delay: 7s;
+}
+
+.sun-ray.six::after {
+	animation-delay: 3.5s;
+}
+
+.sun-ray.seven::after {
+	animation-delay: .5s;
+}
+
+.sun-ray.eight::after {
+	animation-delay: 1.5s;
+}
+
+@keyframes rayStreak {
+
+	/* for the first 95% do nothing, this creates the timer effect. */
+	0%,
+	95% {
+		transform: rotate(20deg) scaleY(0);
+		transform-origin: bottom;
+	}
+
+	100% {
+		transform: rotate(20deg) scaleY(1);
+		transform-origin: bottom;
+	}
+}
+
+.sun-ray {
 	position: absolute;
 	width: 0;
 	height: 0;
 	border-left: 25px solid transparent;
 	border-right: 25px solid transparent;
-	border-bottom: 65px solid rgba(0, 0, 0, .85);;
+	border-bottom: 65px solid rgba(0, 0, 0, .85);
 	top: 0;
 	left: 0;
 	transform: rotate(316deg);
 	z-index: 1;
-	
 }
 
 
