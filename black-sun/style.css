@@ -176,7 +176,7 @@ body {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
-	border:1px solid black;
+	border: 1px solid black;
 	background: rgba(0, 0, 0, .65);
 	z-index: 2;
 }
@@ -270,8 +270,8 @@ body {
 @keyframes rayStreak {
 
 	/* for the first 95% do nothing, this creates the timer effect. */
-	0%,95%
-	 {
+	0%,
+	95% {
 		transform: rotate(20deg) scaleY(0);
 		transform-origin: bottom;
 	}
@@ -296,8 +296,14 @@ body {
 }
 
 
-/* Animations
-* Move the top and left to push out the ::before circles
-* Transform rotate back and forth
-* TranslateX(rotate())
-* Have them all go to 0deg, then to 360deg, they all spin around and point to one ray!*/
+/* Shadow */
+.container .sun-container.one::before {
+	content: '';
+	position: absolute;
+	bottom: -100px;
+	left: -50%;
+	width: 200%;
+	height: 40px;
+	border-radius: 50%;
+	background: radial-gradient(rgba(0, 0, 0, .1), transparent, transparent);
+}
