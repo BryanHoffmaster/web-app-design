@@ -28,26 +28,110 @@ body {
 	align-items: center;
 }
 
+
+.sun-container.one {
+	animation: animateRayOne ease-in-out 2s infinite;
+}
+@keyframes animateRayOne {
+	0%,100%{
+		transform: rotate(-2deg);
+	}
+	50%{
+		transform: rotate(2deg);
+	}
+}
+
 .sun-container.two{
 	transform: rotate(45deg);
+	animation: animateRayTwo ease-in-out 2s infinite;
 }
+@keyframes animateRayTwo {
+	0%,100%{
+		transform: rotate(43deg);
+	}
+	50%{
+		transform: rotate(45deg);
+	}
+}
+
 .sun-container.three{
 	transform: rotate(90deg);
+	animation-delay: -1s;
+	animation: animateRayThree ease-in-out 1s infinite;
 }
+@keyframes animateRayThree {
+	0%,100%{
+		transform: rotate(88deg);
+	}
+	50%{
+		transform: rotate(90deg);
+	}
+}
+
 .sun-container.four{
 	transform: rotate(135deg);
+	animation: animateRayFour ease-in-out 4s infinite;
 }
+@keyframes animateRayFour {
+	0%,100%{
+		transform: rotate(133deg);
+	}
+	50%{
+		transform: rotate(135deg);
+	}
+}
+
 .sun-container.five{
 	transform: rotate(180deg);
+	animation: animateRayFive ease-in-out 2s infinite;
 }
+@keyframes animateRayFive {
+	0%,100%{
+		transform: rotate(178deg);
+	}
+	50%{
+		transform: rotate(180deg);
+	}
+}
+
 .sun-container.six{
 	transform: rotate(225deg);
+	animation: animateRaySix ease-in-out 3s infinite;
 }
+@keyframes animateRaySix {
+	0%,100%{
+		transform: rotate(223deg);
+	}
+	50%{
+		transform: rotate(225deg);
+	}
+}
+
 .sun-container.seven{
 	transform: rotate(270deg);
+	animation-delay: -1s;
+	animation: animateRaySeven ease-in-out 2s infinite;
 }
+@keyframes animateRaySeven {
+	0%,100%{
+		transform: rotate(268deg);
+	}
+	50%{
+		transform: rotate(270deg);
+	}
+}
+
 .sun-container.eight{
 	transform: rotate(315deg);
+	animation: animateRayEight ease-in-out 4s infinite;
+}
+@keyframes animateRayEight {
+	0%,100%{
+		transform: rotate(313deg);
+	}
+	50%{
+		transform: rotate(315deg);
+	}
 }
 
 
@@ -83,11 +167,12 @@ body {
 	left: 0;
 	transform: rotate(316deg);
 	z-index: 1;
+	
 }
-
 
 
 /* Animations
 * Move the top and left to push out the ::before circles
 * Transform rotate back and forth
-* TranslateX(rotate())*/
+* TranslateX(rotate())
+* Have them all go to 0deg, then to 360deg, they all spin around and point to one ray!*/
