@@ -9,3 +9,85 @@ body {
 	/* minty-white */
 	background: #eafdff;
 }
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sun-container {
+	/* Relative captures the absolute position of the rays */
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sun-container.two{
+	transform: rotate(45deg);
+}
+.sun-container.three{
+	transform: rotate(90deg);
+}
+.sun-container.four{
+	transform: rotate(135deg);
+}
+.sun-container.five{
+	transform: rotate(180deg);
+}
+.sun-container.six{
+	transform: rotate(225deg);
+}
+.sun-container.seven{
+	transform: rotate(270deg);
+}
+.sun-container.eight{
+	transform: rotate(315deg);
+}
+
+
+.black-sun {
+	position: relative;
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, .85);
+	z-index: 2;
+}
+
+/* Rays have their cut out from the ::before circle */
+.sun-ray::before {
+	position: absolute;
+	top: 51px;
+	left: -76px;
+	content: '';
+	height: 165px;
+	width: 165px;
+	border-radius: 50%;
+	background: #eafdff;
+}
+
+.sun-ray{
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 65px solid rgba(0, 0, 0, .85);;
+	top: 0;
+	left: 0;
+	transform: rotate(316deg);
+	z-index: 1;
+}
+
+
+
+/* Animations
+* Move the top and left to push out the ::before circles
+* Transform rotate back and forth
+* TranslateX(rotate())*/
